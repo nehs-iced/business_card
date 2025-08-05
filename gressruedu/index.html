@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>草草</title>
+  <meta name="description" content="嗨嗨!!我是最可愛的草草.w.">
+  <meta property="og:title" content="草草'" />
+  <meta property="og:image" content="./avatar.png" />
+  <meta property="og:description" content="嗨嗨!!我是最可愛的草草.w." />
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" href="../favicon.ico" type="image/x-icon"/>
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body, html {
+      background: linear-gradient(135deg, #f4feda, #d7ffcf, #d5ffe8);
+    }
+  </style>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript">
+    (function ($) {
+      $.fn.snow = function (options) {
+        var $flake = $('<div id="snowbox" />').css({ 'position': 'absolute', 'z-index': '9999', 'top': '-50px' }).html('&#x2740;'),
+          documentHeight = $(document).height(),
+          documentWidth = $(document).width(),
+          defaults = {
+            minSize: 10,
+            maxSize: 20,
+            newOn: 1000,
+            flakeColors: ["#ff1493", "#ff69b4", "#d8bfd8", "#dda0dd", "#ba55d3", "#fffacd", "#ffc0cb", "#fff0f5"]
+          },
+          options = $.extend({}, defaults, options);
+        var snowCount = 0; // Add snowCount variable declaration
+        var interval = setInterval(function () {
+          var startPositionLeft = Math.random() * documentWidth - 100,
+            startOpacity = 0.5 + Math.random(),
+            sizeFlake = options.minSize + Math.random() * options.maxSize,
+            endPositionTop = documentHeight - 200,
+            endPositionLeft = startPositionLeft - 500 + Math.random() * 500,
+            durationFall = documentHeight * 10 + Math.random() * 5000;
+          const flakeColor = options.flakeColors[Math.floor(Math.random() * options.flakeColors.length)];
+          $flake.clone().appendTo('body').css({
+            left: startPositionLeft,
+            opacity: startOpacity,
+            'font-size': sizeFlake,
+            color: flakeColor
+          }).on('click', function () {
+            $(this).remove();
+            snowCount++;
+            if (snowCount >= 52) {
+              info_me();
+              snowCount = 0; // Reset the counter
+            }
+          }).animate({
+            top: endPositionTop,
+            left: endPositionLeft,
+            opacity: 0.2
+          }, durationFall, 'linear', function () {
+            $(this).remove()
+          });
+        }, options.newOn);
+      };
+    })(jQuery);
+    $(function () {
+      $.fn.snow({
+        minSize: 5, /* 定義雪花最小尺寸 */
+        maxSize: 50,/* 定義雪花最大尺寸 */
+        newOn: 200  /* 定義密集程度，數字越小越密集 */
+      });
+    });
+  </script>
+  <script>
+    function info_me() {
+      var message = "我的小小資訊:\n我其實是一個阿姨\n我跟叔叔是一對的\n我希望開出花。";
+      alert(message)
+    }
+  </script>
+  <script>
+    let snowCount = 0;
+  </script>
+
+</head>
+
+<body>
+  <div class="namecard">
+    <h2>熊貓草草</h2>
+    <h3>動物&植物</h3>
+    <div class="mail"><a style="color:#606060" href="mailto:grassygrass.reedu@gmail.com">grassygrass.reedu@gmail.com</a></div>
+    <div class="dcid"><a style="color:#606060" href="https://discord.com/users/1361714399265554674" target="_blank">草草</a>
+    </div>
+    <div class="fbid"><a style="color:#606060" href="https://www.facebook.com/grass.reedu" target="_blank">熊貓草草</a>
+    </div>
+    <div class="qr" style="background-image: url(./avatar.png);"></div>
+    <div class="circle circle1"></div>
+    <div class="circle circle2"></div>
+    <div class="circle circle3"></div>
+    <div class="circle circle4"></div>
+    <!--<div class="circle circle5"></div>-->
+    <div class="circle circle6"></div>
+
+  </div>
+
+  <div class="copy" style="color: #000;">ICED&copy;2025</div>
+  <!-- partial -->
+
+</body>
+
+</html>
