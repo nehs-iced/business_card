@@ -3,106 +3,26 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>EHDW-潘</title>
-  <meta name="description" content="嗨嗨!!我是一位台灣的高中生.w.">
-  <meta property="og:title" content="EHDW-潘" />
-  <meta property="og:image" content="./avatar.jpg" />
-  <meta property="og:description" content="嗨嗨!!我是一位台灣的高中生.w." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ICED Card</title>
+  <meta name="description" content="ICED Card">
+  <meta property="og:title" content="ICED Card" />
+  <meta property="og:image" content="./img/icetea.png" />
+  <meta property="og:description" content="ICED Card" />
   <link rel="stylesheet" href="./style.css">
   <link rel="icon" href="./favicon.ico" type="image/x-icon"/>
-  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script type="text/javascript">
-    (function ($) {
-      $.fn.snow = function (options) {
-        var $flake = $('<div id="snowbox" />').css({ 'position': 'absolute', 'z-index': '9999', 'top': '-50px' }).html('&#10052;'),
-          documentHeight = $(document).height(),
-          documentWidth = $(document).width(),
-          defaults = {
-            minSize: 10,
-            maxSize: 20,
-            newOn: 1000,
-            flakeColors: ["#f0f8ff", "#f5fffa", "#fffafa", "#ffffff", "#f8f8ff", "#e6f7ff", "#f0ffff", "#faf0e6"]
-          },
-          options = $.extend({}, defaults, options);
-        var snowCount = 0; // Add snowCount variable declaration
-        var interval = setInterval(function () {
-          var startPositionLeft = Math.random() * documentWidth - 100,
-            startOpacity = 0.5 + Math.random(),
-            sizeFlake = options.minSize + Math.random() * options.maxSize,
-            endPositionTop = documentHeight - 200,
-            endPositionLeft = startPositionLeft - 500 + Math.random() * 500,
-            durationFall = documentHeight * 10 + Math.random() * 5000;
-          const flakeColor = options.flakeColors[Math.floor(Math.random() * options.flakeColors.length)];
-          $flake.clone().appendTo('body').css({
-            left: startPositionLeft,
-            opacity: startOpacity,
-            'font-size': sizeFlake,
-            color: flakeColor
-          }).on('click', function () {
-            $(this).remove();
-            snowCount++;
-            if (snowCount >= 20) {
-              info_me();
-              snowCount = 0; // Reset the counter
-            }
-          }).animate({
-            top: endPositionTop,
-            left: endPositionLeft,
-            opacity: 0.2
-          }, durationFall, 'linear', function () {
-            $(this).remove()
-          });
-        }, options.newOn);
-      };
-    })(jQuery);
-    $(function () {
-      $.fn.snow({
-        minSize: 5, /* 定義雪花最小尺寸 */
-        maxSize: 50,/* 定義雪花最大尺寸 */
-        newOn: 200  /* 定義密集程度，數字越小越密集 */
-      });
-    });
-  </script>
-  <script>
-    function info_me() {
-      var message = "我的小小資訊:\n🚹/🇹🇼/16y\n\n我擅長的:\n網頁開發/Discord Bot/Regex\n\n我參與過的社群:\n> SITCON 2025 會眾\n> SITCON CAMP 2025 課活組\n> SITCON 2026 行政組";
-      alert(message)
+  <style>
+    body, html {
+      background: linear-gradient(333deg, #F8CFBF, #F8EEBF, #BFF2F8);
     }
-  </script>
-  <script>
-    let snowCount = 0;
-  </script>
-
+  </style>
 </head>
-
 <body>
-  <div class="namecard">
-    <h2>EHDW (潘)</h2>
-    <h3>學生&開發者</h3>
-    <div class="mail"><a style="color:#606060" href="mailto:admin@iced.qzz.io">admin@iced.qzz.io</a></div>
-    <div class="dcid"><a style="color:#606060" href="https://discord.com/users/1250823247117946910" target="_blank">panboyu3980</a>
-    </div>
-    <div class="github"><a style="color:#606060" href="https://github.com/panboyu1813" target="_blank">panboyu1813</a>
-    </div>
-    <div class="lineid"><a style="color:#606060" href="https://lin.ee/5fA8IHt" target="_blank">@067ieugl</a>
-    </div>
-    <div class="qr" style="background-image: url(./img/ehdw.png);"></div>
-    <div class="circle circle1"></div>
-    <div class="circle circle2"></div>
-    <div class="circle circle3"></div>
-    <div class="circle circle4"></div>
-    <!--<div class="circle circle5"></div>-->
-    <div class="circle circle6"></div>
-
-  </div>
-
-  <div class="copy">ICED</div>
-  <!-- partial -->
-
+  <main class="namecard">
+    <h2>Welcome to ICED Card</h2>
+    <p><br>請/使用者名稱，來查看對應的使用者。<br>如果需要新增或修改名片請發PR。</p>
+    <div class="qr" style="background-image: url(./img/icetea.png);"></div>
+  </main>
+  <div class="copy" style="color: #000;">ICED&copy;2025</div>
 </body>
-
 </html>
