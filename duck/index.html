@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>鴨鴨</title>
+  <meta name="description" content="嗨嗨!!我是鴨子草.w.">
+  <meta property="og:title" content="鴨鴨" />
+  <meta property="og:image" content="./avatar.jpg" />
+  <meta property="og:description" content="嗨嗨!!我是鴨子草.w." />
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" href="../favicon.ico" type="image/x-icon"/>
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    .namecard {
+      cursor: url(https://cur.cursors-4u.net/games/gam-10/gam904.ani), auto !important;
+    }
+
+    .namecard:hover {
+      cursor: url(https://cur.cursors-4u.net/games/gam-10/gam904.ani), auto !important;
+    }
+
+    .namecard a {
+      cursor: url(https://cur.cursors-4u.net/games/gam-10/gam904.ani), auto !important;
+    }    
+  </style>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript">
+    (function ($) {
+      $.fn.snow = function (options) {
+        var $flake = $('<div id="snowbox" />').css({ 'position': 'absolute', 'z-index': '9999', 'top': '-50px' }).html('●'),
+          documentHeight = $(document).height(),
+          documentWidth = $(document).width(),
+          defaults = {
+            minSize: 10,
+            maxSize: 20,
+            newOn: 1000,
+            flakeColors: ["#f0f8ff", "#f5fffa", "#fffafa", "#ffffff", "#f8f8ff", "#e6f7ff", "#f0ffff", "#faf0e6"]
+          },
+          options = $.extend({}, defaults, options);
+        var snowCount = 0; // Add snowCount variable declaration
+        var interval = setInterval(function () {
+          var startPositionLeft = Math.random() * documentWidth - 100,
+            startOpacity = 0.5 + Math.random(),
+            sizeFlake = options.minSize + Math.random() * options.maxSize,
+            endPositionTop = documentHeight - 200,
+            endPositionLeft = startPositionLeft - 500 + Math.random() * 500,
+            durationFall = documentHeight * 10 + Math.random() * 5000;
+          const flakeColor = options.flakeColors[Math.floor(Math.random() * options.flakeColors.length)];
+          $flake.clone().appendTo('body').css({
+            left: startPositionLeft,
+            opacity: startOpacity,
+            'font-size': sizeFlake,
+            color: flakeColor
+          }).on('click', function () {
+            $(this).remove();
+            snowCount++;
+            if (snowCount >= 25) {
+              info_me();
+              snowCount = 0; // Reset the counter
+            }
+          }).animate({
+            top: endPositionTop,
+            left: endPositionLeft,
+            opacity: 0.2
+          }, durationFall, 'linear', function () {
+            $(this).remove()
+          });
+        }, options.newOn);
+      };
+    })(jQuery);
+    $(function () {
+      $.fn.snow({
+        minSize: 5, /* 定義雪花最小尺寸 */
+        maxSize: 50,/* 定義雪花最大尺寸 */
+        newOn: 200  /* 定義密集程度，數字越小越密集 */
+      });
+    });
+  </script>
+  <script>
+    function info_me() {
+      var message = "我的小小資訊:\n好吃。";
+      alert(message)
+    }
+  </script>
+  <script>
+    let snowCount = 0;
+  </script>
+
+</head>
+
+<body>
+  <div class="namecard">
+    <h2>鴨鴨</h2>
+    <h3>學生&動物</h3>
+    <div class="mail"><a style="color:#606060" href="mailto:duck@example.com">duck@example.com</a></div>
+    <div class="dcid"><a style="color:#606060" href="https://discord.com/users/988238885018542111" target="_blank">lazypanda0.0</a>
+    </div>
+    <div class="fbid"><a style="color:#606060" href="https://www.facebook.com/yao.ducky.yahhhhhh" target="_blank">Crystal Lin</a>
+    </div>
+    <div class="igid"><a style="color:#606060" href="https://www.instagram.com/yao._.shinichi/" target="_blank">yao._.shinichi</a>
+    </div>
+    <div class="qr" style="background-image: url(./avatar.jpg);"></div>
+    <div class="circle circle1"></div>
+    <div class="circle circle2"></div>
+    <div class="circle circle3"></div>
+    <div class="circle circle4"></div>
+    <!--<div class="circle circle5"></div>-->
+    <div class="circle circle6"></div>
+
+  </div>
+  
+  <div class="copy">ICED&copy;2025</div>
+  <!-- partial -->
+
+</body>
+
+</html>
