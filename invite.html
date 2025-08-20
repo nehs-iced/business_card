@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>國立竹科實中資訊研究社 2025 社員面試邀請</title>
+  <meta name="description" content="面試資訊、RSVP、社團介紹、FAQ、聯絡方式" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      background: #070a12;
+      color: #e2e8f0;
+    }
+
+    /* Background animations */
+    @keyframes slide {
+      from { transform: translateX(-10%); }
+      to { transform: translateX(10%); }
+    }
+
+    .bg-container {
+      position: fixed;
+      inset: 0;
+      z-index: -10;
+      pointer-events: none;
+    }
+
+    .bg-gradients {
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(1200px 600px at 10% -10%, rgba(34,211,238,0.15), transparent),
+        radial-gradient(900px 500px at 110% 10%, rgba(16,185,129,0.12), transparent);
+    }
+
+    .bg-blur {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 16rem;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.1), transparent);
+      filter: blur(2rem);
+    }
+
+    .sliding-lines {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    .sliding-line {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(255,255,255,0.2), transparent);
+      animation: slide 10s linear infinite;
+    }
+
+    /* Navigation */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      background: rgba(7,10,18,0.8);
+      backdrop-filter: blur(8px);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo-icon {
+      position: relative;
+      width: 32px;
+      height: 32px;
+      display: grid;
+      place-items: center;
+    }
+
+    .logo-bg {
+      position: absolute;
+      inset: 0;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(34,211,238,0.4), rgba(16,185,129,0.4));
+      filter: blur(6px);
+    }
+
+    .logo-content {
+      position: relative;
+      width: 32px;
+      height: 32px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.05);
+      display: grid;
+      place-items: center;
+    }
+
+    .logo-img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .nav-title {
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 24px;
+      font-size: 14px;
+    }
+
+    @media (min-width: 768px) {
+      .nav-links {
+        display: flex;
+      }
+    }
+
+    .nav-link {
+      color: #e2e8f0;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-link:hover {
+      color: rgba(255,255,255,0.9);
+    }
+
+    .btn-primary {
+      background: rgba(6,182,212,0.9);
+      color: #0f172a;
+      padding: 8px 16px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      box-shadow: 0 10px 15px rgba(6,182,212,0.2);
+      transition: background 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: rgba(34,211,238,1);
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    /* Section styles */
+    .section {
+      position: relative;
+      padding: 64px 0;
+    }
+
+    .section-header {
+      margin-bottom: 32px;
+    }
+
+    .section-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 8px;
+    }
+
+    .section-subtitle {
+      color: rgba(226,232,240,0.9);
+      font-size: 18px;
+    }
+
+    @media (min-width: 768px) {
+      .section {
+        padding: 96px 0;
+      }
+      .section-title {
+        font-size: 36px;
+      }
+    }
+
+    /* Hero section */
+    .hero {
+      padding: 80px 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 32px;
+      align-items: center;
+    }
+
+    @media (min-width: 768px) {
+      .hero {
+        padding: 112px 0;
+      }
+      .hero-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 9999px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.05);
+      padding: 4px 12px;
+      font-size: 12px;
+      color: rgba(226,232,240,0.8);
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      background: #10b981;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    .hero-title {
+      margin-top: 16px;
+      font-size: 36px;
+      font-weight: 800;
+      color: white;
+      line-height: 1.1;
+    }
+
+    @media (min-width: 768px) {
+      .hero-title {
+        font-size: 48px;
+      }
+    }
+
+    .hero-subtitle {
+      margin-top: 12px;
+      font-size: 20px;
+      color: rgba(226,232,240,0.9);
+    }
+
+    .highlight-cyan {
+      color: #67e8f9;
+    }
+
+    .highlight-emerald {
+      color: #6ee7b7;
+    }
+
+    .hero-text {
+      margin-top: 24px;
+      line-height: 1.8;
+      color: rgba(226,232,240,0.9);
+    }
+
+    .hero-buttons {
+      margin-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.9);
+      padding: 12px 20px;
+      border-radius: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    .btn-primary-large {
+      background: rgba(6,182,212,0.9);
+      color: #0f172a;
+      padding: 12px 20px;
+      border-radius: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 10px 15px rgba(6,182,212,0.2);
+      transition: background 0.2s;
+    }
+
+    .btn-primary-large:hover {
+      background: rgba(34,211,238,1);
+    }
+
+    /* Hero visual */
+    .hero-visual {
+      position: relative;
+      height: 288px;
+    }
+
+    @media (min-width: 768px) {
+      .hero-visual {
+        height: 384px;
+      }
+    }
+
+    .hero-card {
+      position: absolute;
+      inset: 0;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+    }
+
+    .hero-grid-bg {
+      position: absolute;
+      inset: 0;
+      border-radius: 24px;
+      background-image: 
+        linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    .hero-glow-1 {
+      position: absolute;
+      top: -64px;
+      left: -64px;
+      width: 224px;
+      height: 224px;
+      background: rgba(6,182,212,0.2);
+      border-radius: 50%;
+      filter: blur(48px);
+    }
+
+    .hero-glow-2 {
+      position: absolute;
+      bottom: -40px;
+      right: -40px;
+      width: 192px;
+      height: 192px;
+      background: rgba(16,185,129,0.2);
+      border-radius: 50%;
+      filter: blur(48px);
+    }
+
+    .hero-code {
+      position: absolute;
+      inset: 24px;
+      background: rgba(0,0,0,0.4);
+      border-radius: 16px;
+      padding: 16px;
+      font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+      font-size: 12px;
+      line-height: 1.6;
+      color: rgba(167,243,208,0.9);
+      overflow: hidden;
+    }
+
+    /* Cards */
+    .card {
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.05);
+      padding: 20px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 12px;
+    }
+
+    .card-subtitle {
+      font-size: 20px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 12px;
+    }
+
+    /* Grid layouts */
+    .grid-2 {
+      display: grid;
+      gap: 24px;
+    }
+
+    .grid-3 {
+      display: grid;
+      gap: 24px;
+    }
+
+    @media (min-width: 768px) {
+      .grid-2 {
+        grid-template-columns: 1fr 1fr;
+      }
+      .grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* Interview info specific styles */
+    .date-card {
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(0,0,0,0.2);
+      padding: 12px;
+    }
+
+    .date-title {
+      color: #e2e8f0;
+      font-weight: 500;
+    }
+
+    .time-badge {
+      background: rgba(255,255,255,0.1);
+      color: #e2e8f0;
+      padding: 4px 8px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-family: monospace;
+    }
+
+    .process-step {
+      display: flex;
+      gap: 12px;
+    }
+
+    .step-number {
+      width: 24px;
+      height: 24px;
+      background: rgba(34,211,238,0.2);
+      color: #67e8f9;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+
+    .warning-box {
+      border-radius: 12px;
+      border: 1px solid rgba(245,158,11,0.2);
+      background: rgba(245,158,11,0.1);
+      padding: 12px;
+      font-size: 14px;
+      color: #fcd34d;
+      margin-top: 16px;
+    }
+
+    /* RSVP section */
+    .rsvp-card {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    @media (min-width: 768px) {
+      .rsvp-card {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+
+    .btn-emerald {
+      background: rgba(52,211,153,0.9);
+      color: #0f172a;
+      padding: 12px 20px;
+      border-radius: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 10px 15px rgba(52,211,153,0.2);
+      transition: background 0.2s;
+    }
+
+    .btn-emerald:hover {
+      background: rgba(110,231,183,1);
+    }
+
+    /* Table */
+    .table-container {
+      margin-top: 12px;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      min-width: 640px;
+      border-collapse: separate;
+      border-spacing: 0;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    th {
+      background: rgba(255,255,255,0.05);
+      color: #cbd5e1;
+      padding: 12px 16px;
+      font-weight: 500;
+      text-align: left;
+    }
+
+    th:first-child {
+      border-top-left-radius: 12px;
+    }
+
+    th:last-child {
+      border-top-right-radius: 12px;
+    }
+
+    td {
+      padding: 12px 16px;
+      color: rgba(226,232,240,0.95);
+    }
+
+    tr:nth-child(odd) {
+      background: rgba(255,255,255,0.03);
+    }
+
+    /* FAQ and Contact */
+    .faq-item {
+      cursor: pointer;
+    }
+
+    .faq-question {
+      font-weight: 600;
+      color: white;
+      margin-bottom: 8px;
+    }
+
+    .faq-answer {
+      color: rgba(226,232,240,0.9);
+    }
+
+    .contact-container {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    @media (min-width: 768px) {
+      .contact-container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .contact-link {
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.05);
+      color: #e2e8f0;
+      padding: 8px 16px;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .contact-link:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    .footer-text {
+      margin-top: 24px;
+      text-align: center;
+      font-size: 12px;
+      color: #94a3b8;
+    }
+
+    /* Fixed button for mobile */
+    .fixed-btn {
+      position: fixed;
+      bottom: 16px;
+      right: 16px;
+      z-index: 50;
+      background: rgba(6,182,212,0.95);
+      color: #0f172a;
+      padding: 12px 20px;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      box-shadow: 0 25px 50px rgba(6,182,212,0.3);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    @media (min-width: 768px) {
+      .fixed-btn {
+        display: none;
+      }
+    }
+
+    /* Utility classes */
+    .text-white { color: white; }
+    .text-center { text-align: center; }
+    .mt-2 { margin-top: 8px; }
+    .mt-3 { margin-top: 12px; }
+    .mt-4 { margin-top: 16px; }
+    .mt-6 { margin-top: 24px; }
+    .mb-3 { margin-bottom: 12px; }
+    .space-y-3 > * + * { margin-top: 12px; }
+    .list-disc { list-style-type: disc; }
+    .pl-5 { padding-left: 20px; }
+  </style>
+</head>
+<body>
+
+<!-- 背景 -->
+<div class="bg-container">
+  <div class="bg-gradients"></div>
+  <div class="bg-blur"></div>
+  <div class="sliding-lines">
+    <div class="sliding-line" style="top:8%;animation-delay:0s"></div>
+    <div class="sliding-line" style="top:16%;animation-delay:.8s"></div>
+    <div class="sliding-line" style="top:24%;animation-delay:1.6s"></div>
+    <div class="sliding-line" style="top:32%;animation-delay:2.4s"></div>
+    <div class="sliding-line" style="top:40%;animation-delay:3.2s"></div>
+    <div class="sliding-line" style="top:48%;animation-delay:4.0s"></div>
+    <div class="sliding-line" style="top:56%;animation-delay:4.8s"></div>
+    <div class="sliding-line" style="top:64%;animation-delay:5.6s"></div>
+    <div class="sliding-line" style="top:72%;animation-delay:6.4s"></div>
+    <div class="sliding-line" style="top:80%;animation-delay:7.2s"></div>
+  </div>
+</div>
+
+<!-- 導覽列 -->
+<div class="nav">
+  <div class="nav-container">
+    <div class="nav-logo">
+      <div class="logo-icon">
+        <div class="logo-bg"></div>
+        <div class="logo-content">
+          <img src="https://card.iced.qzz.io/img/icetea.png" alt="Logo" class="logo-img">
+        </div>
+      </div>
+      <div class="nav-title">國立竹科實中資訊研究社</div>
+    </div>
+    <nav class="nav-links">
+      <a href="#hero" class="nav-link">回頂端</a>
+      <a href="#info" class="nav-link">面試資訊</a>
+      <a href="#rsvp" class="nav-link">報名</a>
+      <a href="#about" class="nav-link">社團介紹</a>
+      <a href="#faq" class="nav-link">Q&A</a>
+      <a href="#contact" class="nav-link">聯絡</a>
+    </nav>
+    <a href="https://forms.gle/Yqe2TuRVt2o9qkZy7" target="_blank" rel="noreferrer" class="btn-primary">我要報名</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section id="hero" class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-badge">
+          <span class="pulse-dot"></span>
+          <span> 2025 招新 / 面試邀請 </span>
+        </div>
+        <h1 class="hero-title">
+          國立竹科實中資訊研究社 2025 社員面試邀請
+        </h1>
+        <p class="hero-subtitle">
+          <em>第11屆資訊研究社，缺的就是你！🫵</em>
+        </p>
+
+        <p class="hero-text">
+          想把點子變成作品？在這裡，你可以加入
+          <span class="highlight-cyan"> 開發組（Python）</span> 
+          想用演算法解鎖新關卡？趕快報名
+          <span class="highlight-emerald"> 競賽組（C++）</span> 
+        </p>
+
+        <div class="hero-buttons">
+          <a href="https://forms.gle/Yqe2TuRVt2o9qkZy7" target="_blank" rel="noreferrer" class="btn-primary-large">我要報名</a>
+          <a href="#about" class="btn-secondary">了解分組</a>
+        </div>
+      </div>
+
+      <!-- 視覺側 -->
+      <div class="hero-visual">
+        <div class="hero-card"></div>
+        <div class="hero-grid-bg"></div>
+        <div class="hero-glow-1"></div>
+        <div class="hero-glow-2"></div>
+        <div class="hero-code">// recruit.tsx
+function interview(candidate){
+  const ready = candidate.motivation && candidate.curiosity;
+  if(!ready){
+    return "Welcome to learn from zero!";
+  }
+  return ready ? "Challenge accepted!" : "See you at club!";
+}
+
+// TODO: book your slot at the form →</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 歡迎訊息 -->
+<section class="section" style="padding: 48px 0;">
+  <div class="container">
+    <div class="card" style="background: linear-gradient(135deg, rgba(34,211,238,0.08), rgba(16,185,129,0.08)); border: 1px solid rgba(255,255,255,0.15);">
+      <div style="text-align: center; margin-bottom: 24px;">
+        <h2 style="font-size: 24px; font-weight: 700; color: white; margin-bottom: 12px;">
+          嗨～國一與高一的新生你們好！👋
+        </h2>
+        <p style="color: rgba(226,232,240,0.9); font-size: 16px;">
+          歡迎你們加入實驗的大家庭
+        </p>
+      </div>
+      
+      <div style="line-height: 1.8; color: rgba(226,232,240,0.95);">
+        <p style="margin-bottom: 16px;">
+          我們是國立竹科實中資訊研究社💻<span style="color: #67e8f9; font-weight: 600;">第1️⃣1️⃣屆</span>的幹部，如果你對程式設計、資訊競賽、開發網頁等有興趣，那還在等什麼❓快來加入我們吧❗
+        </p>
+        
+        <p style="margin-bottom: 16px;">
+          程式<span style="color: #fcd34d; font-weight: 600;">0️⃣基礎</span>的新手小白❓不太理解資訊領域的範疇❓沒關係❗只要你有興趣，都可以入社呵❗
+        </p>
+        
+        <div style="background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.2); border-radius: 12px; padding: 16px; margin: 20px 0;">
+          <p style="margin-bottom: 12px; color: #6ee7b7;">
+            <strong>🎉 特別活動預告</strong>
+          </p>
+          <p style="margin-bottom: 8px;">
+            對了對了，今年資研社呢，會與許多學校聯手舉辦一場大型資訊年會 <span style="color: #67e8f9; font-weight: 600;">INFAS</span>，不論你想加入擔任工作人員（成為工人~），獲得服務時數或豐富學習歷程，還是報名參加年會增廣見聞，我們都非常歡迎喔❗
+          </p>
+          <p style="font-size: 14px; color: rgba(226,232,240,0.8);">
+            (p.s. 如果有興趣擔任工人，沒有經驗也是沒有關係的喔~ 只要你認真負責、願意學習，都可以報名看看❗）
+          </p>
+        </div>
+        
+        <div style="margin: 24px 0; padding: 20px; background: rgba(0,0,0,0.3); border-radius: 12px; border-left: 4px solid #67e8f9;">
+          <h3 style="color: white; font-size: 18px; margin-bottom: 16px;">你是否曾經 🤔</h3>
+          <ul style="list-style: none; padding: 0; space-between: 8px;">
+            <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
+              <span style="position: absolute; left: 0; color: #67e8f9;">💭</span>
+              想要接觸程式語言卻覺得自己學不太來？
+            </li>
+            <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
+              <span style="position: absolute; left: 0; color: #67e8f9;">🤖</span>
+              想知道如何開發 Discord Server 的小精靈（Bot）？
+            </li>
+            <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
+              <span style="position: absolute; left: 0; color: #67e8f9;">⚡</span>
+              嘗試優化程式但卻不知道從何下手？
+            </li>
+          </ul>
+        </div>
+        
+        <div style="text-align: center; margin-top: 24px;">
+          <p style="font-size: 20px; font-weight: 700; color: white; margin-bottom: 8px;">
+            那你絕對不能錯過<span style="color: #67e8f9;">資訊研究社！</span>✨
+          </p>
+          <p style="font-size: 18px; color: #6ee7b7; margin-bottom: 16px;">
+            第11屆資訊研究社，缺的就是你！🫵
+          </p>
+          <a href="https://forms.gle/Yqe2TuRVt2o9qkZy7" target="_blank" rel="noreferrer" 
+             style="display: inline-block; background: linear-gradient(135deg, rgba(6,182,212,0.9), rgba(52,211,153,0.9)); color: #0f172a; padding: 12px 24px; border-radius: 12px; font-weight: 700; text-decoration: none; box-shadow: 0 10px 20px rgba(6,182,212,0.3); transform: translateY(0); transition: all 0.2s;">
+            快來加入我們！🚀
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 面試資訊 -->
+<section id="info" class="section">
+  <div class="container">
+    <header class="section-header">
+      <h2 class="section-title">面試資訊</h2>
+      <p class="section-subtitle">日期、地點、流程一次看懂</p>
+    </header>
+    <div class="grid-3">
+      <!-- 日期與時段 -->
+      <div class="card">
+        <h3 class="card-title">日期與時段</h3>
+        <div class="space-y-3 mt-3">
+          <div class="date-card">
+            <div class="date-title">2025/09/04（Thu）</div>
+            <div class="mt-2">
+              <span class="time-badge">12:30—13:00</span>
+            </div>
+          </div>
+          <div class="date-card">
+            <div class="date-title">2025/09/03（Fri）</div>
+            <div class="mt-2">
+              <span class="time-badge">12:30—13:00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 地點 -->
+      <div class="card">
+        <h3 class="card-title">地點</h3>
+        <ul class="mt-3 space-y-3">
+          <li>
+            <div class="date-title">科藝大樓二樓 國中資訊教室</div>
+            <div style="font-size:14px;color:rgba(226,232,240,0.7);">主要面試場地</div>
+          </li>
+        </ul>
+        <a href="https://youtu.be/xxxxxxxxxxx" target="_blank" rel="noreferrer" class="contact-link mt-4" style="display:inline-flex;align-items:center;gap:8px;">
+          <span>📍</span> 帶路影片
+        </a>
+      </div>
+
+      <!-- 流程 -->
+      <div class="card">
+        <h3 class="card-title">流程</h3>
+        <ol class="mt-3 space-y-3">
+          <li class="process-step">
+            <div class="step-number">1</div>
+            <div>
+              <div class="date-title">報名</div>
+              <div style="font-size:14px;color:rgba(226,232,240,0.7);">核對學號/姓名</div>
+            </div>
+          </li>
+          <li class="process-step">
+            <div class="step-number">2</div>
+            <div>
+              <div class="date-title">個人面談（5—10 分）</div>
+              <div style="font-size:14px;color:rgba(226,232,240,0.7);">了解動機、興趣與基礎</div>
+            </div>
+          </li>
+          <li class="process-step">
+            <div class="step-number">4</div>
+            <div>
+              <div class="date-title">結果通知</div>
+              <div style="font-size:14px;color:rgba(226,232,240,0.7);">9/7（Sun）前以 Email / 公告通知</div>
+            </div>
+          </li>
+        </ol>
+        <div class="warning-box">
+          注意：若有面試時間無法配合或特殊需求，請先聯繫幹部協助安排。
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 報名 -->
+<section id="rsvp" class="section">
+  <div class="container">
+    <header class="section-header">
+      <h2 class="section-title">RSVP / 報名回覆</h2>
+      <p class="section-subtitle">60 秒完成｜以學號與姓名填寫</p>
+    </header>
+    <div class="card rsvp-card">
+      <div>
+        <div class="card-title">立即填表，預約面試時段</div>
+      </div>
+      <a href="https://forms.gle/Yqe2TuRVt2o9qkZy7" target="_blank" rel="noreferrer" class="btn-emerald">前往報名表單</a>
+    </div>
+  </div>
+</section>
+
+<!-- 社團介紹 -->
+<section id="about" class="section">
+  <div class="container">
+    <header class="section-header">
+      <h2 class="section-title">社團介紹</h2>
+      <p class="section-subtitle">學習、研究、分享資訊技術</p>
+    </header>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3 class="card-subtitle">🛠️ 開發組（Python）｜打造專屬網站與 Discord 機器人</h3>
+        <p class="mt-3">
+          從零開始掌握 <span class="highlight-cyan">Python Flask</span> 與
+          <span class="highlight-cyan"> Discord Bot</span> 開發，帶你完成可上線的實作專案：
+          網站部署、互動機器人、API 串接一次學會！
+        </p>
+        <ul class="mt-3 list-disc pl-5 space-y-1">
+          <li>社課地點：活動中心底下的小閱覽室</li>
+          <li>因場地無電腦，第二堂課起請自備筆電</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3 class="card-subtitle">⏱️ 競賽組（C++）｜用演算法征服競賽舞台</h3>
+        <p class="mt-3">
+          聚焦 <span class="highlight-emerald">演算法與資料結構</span> 實力養成，
+          從 APCS、校內選拔到資奧/NOI 進階挑戰，搭配社內賽與題解檢討，循序精進！
+        </p>
+        <ul class="mt-3 list-disc pl-5 space-y-1">
+          <li>社課地點：科藝大樓二樓 國中資訊教室</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 課程表 -->
+    <div class="card mt-6">
+      <h3 class="card-title">社課規劃（約12 週）</h3>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>週次</th>
+              <th>競賽組</th>
+              <th>開發組</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>分組介紹</td><td>分組介紹</td></tr>
+            <tr><td>2</td><td>C++ 基礎語法</td><td>Linux 基礎語法</td></tr>
+            <tr><td>3</td><td>複雜度</td><td>Python 基礎語法</td></tr>
+            <tr><td>4</td><td>STL</td><td>Python 資料結構</td></tr>
+            <tr><td>5</td><td>遞迴</td><td>Python Function</td></tr>
+            <tr><td>6</td><td>社內賽</td><td>TBA</td></tr>
+            <tr><td>7</td><td>社內賽檢討</td><td>Python Package</td></tr>
+            <tr><td>8</td><td>二分搜尋法</td><td>Discord Bot 基礎</td></tr>
+            <tr><td>9</td><td>動態規劃</td><td>Slash command</td></tr>
+            <tr><td>10</td><td>社內賽</td><td>emble & view</td></tr>
+            <tr><td>11</td><td>社內賽檢討</td><td>黑客松</td></tr>
+            <tr><td>12</td><td>TBA</td><td>黑客松發表</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="section">
+  <div class="container">
+    <header class="section-header">
+      <h2 class="section-title">Q&A 常見問題</h2>
+    </header>
+    <div class="grid-2">
+      <div class="card faq-item">
+        <div class="faq-question">
+          需要程式基礎嗎？
+        </div>
+        <p class="faq-answer">不需要！我們重視學習動機，從零開始也能上手。</p>
+      </div>
+      <div class="card faq-item">
+        <div class="faq-question">
+          無法參加面試怎麼辦？
+        </div>
+        <p class="faq-answer">可提前聯繫幹部另約時間。</p>
+      </div>
+      <div class="card faq-item">
+        <div class="faq-question">
+          多久通知結果？
+        </div>
+        <p class="faq-answer">面試後 7 天內（最晚 9/7）以 Email / 公告通知。</p>
+      </div>
+      <div class="card faq-item">
+        <div class="faq-question">
+          有費用嗎？
+        </div>
+        <p class="faq-answer">僅收取社費，依當年度決議。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 聯絡與頁尾 -->
+<section id="contact" class="section">
+  <div class="container">
+    <header class="section-header">
+      <h2 class="section-title">聯絡方式</h2>
+    </header>
+    <div class="card">
+      <div class="contact-container">
+        <div>
+          <div class="card-title">聯絡我們</div>
+          <div style="color:rgba(226,232,240,0.9);">有問題都可以提前聯繫，我們會盡快回覆。</div>
+        </div>
+        <div class="contact-links">
+          <a href="mailto:h999919@nehs.hc.edu.tw" class="contact-link">✉️ Email：h999919@nehs.hc.edu.tw</a>
+          <a href="https://instagram.com/nehs_iced" target="_blank" rel="noreferrer" class="contact-link">📷 IG 官方帳號</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-text">© 2025 國立竹科實中資訊研究社 · All rights reserved.</div>
+  </div>
+</section>
+
+<!-- 固定報名浮鈕（手機） -->
+<a href="https://forms.gle/Yqe2TuRVt2o9qkZy7" target="_blank" rel="noreferrer" class="fixed-btn">我要報名 →</a>
+
+</body>
+</html>
